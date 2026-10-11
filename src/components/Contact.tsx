@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, Mail, MapPin, Github, Linkedin, Twitter, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Linkedin, Twitter, Facebook, Instagram, CheckCircle2, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { portfolio } from '@/data/portfolio';
 
@@ -51,6 +51,8 @@ export default function Contact() {
     { icon: Github, href: portfolio.social.github, label: 'GitHub' },
     { icon: Linkedin, href: portfolio.social.linkedin, label: 'LinkedIn' },
     { icon: Twitter, href: portfolio.social.twitter, label: 'Twitter' },
+    { icon: Facebook, href: portfolio.social.facebook, label: 'Facebook' },
+    { icon: Instagram, href: portfolio.social.instagram, label: 'Instagram' },
   ].filter((s) => s.href);
 
   return (

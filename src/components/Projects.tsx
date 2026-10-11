@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Github, ExternalLink, ArrowLeft, CheckCircle2, X } from 'lucide-react';
+import { Github, ExternalLink, ArrowLeft, CheckCircle2, X, Search } from 'lucide-react';
 import { projects, type Project } from '@/data/portfolio';
 
 const categories = ['All', 'Web App', 'Dashboard', 'Developer Tool', 'Mobile/Web', 'Analytics'];
@@ -15,9 +15,18 @@ const projectGradients: Record<string, string> = {
 
 export default function Projects() {
   const [filter, setFilter] = useState('All');
+  const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<Project | null>(null);
 
-  const filtered = filter === 'All' ? projects : projects.filter((p) => p.category === filter);
+  const filtered = projects.filter((p) => {
+    const matchesCategory = filter === 'All' || p.category === filter;
+    const matchesSearch =
+      !search ||
+      p.name.toLowerCase().includes(search.toLowerCase()) ||
+      p.description.toLowerCase().includes(search.toLowerCase()) ||
+      p.technologies.some((t) => t.toLowerCase().includes(search.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <section id="projects" className="py-20 sm:py-28 bg-white">
@@ -33,6 +42,20 @@ export default function Projects() {
           <p className="text-slate-500 max-w-xl mx-auto">
             A selection of things I've built. Click any project to learn more.
           </p>
+        </div>
+
+        {/* Search bar */}
+        <div className="flex justify-center mb-6">
+          <div className="relative w-full max-w-xs">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search projects..."
+              className="w-full pl-9 pr-4 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all"
+            />
+          </div>
         </div>
 
         {/* Category filter */}
@@ -53,6 +76,11 @@ export default function Projects() {
         </div>
 
         {/* Project grid */}
+        {filtered.length === 0 ? (
+          <div className="text-center py-16">
+            <p className="text-slate-400 text-sm">No projects found matching your search.</p>
+          </div>
+        ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((project, i) => (
             <div
@@ -129,6 +157,7 @@ export default function Projects() {
             </div>
           ))}
         </div>
+        )}
       </div>
 
       {/* Project detail modal */}

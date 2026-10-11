@@ -1,9 +1,9 @@
 export const portfolio = {
-  name: 'Alex Morgan',
-  preferredName: 'Alex',
+  name: 'Umuhire Fabrice',
+  preferredName: 'Fabrice',
   title: 'Full-Stack Developer & UI Engineer',
   tagline: 'I build delightful web experiences that are fast, accessible, and beautiful.',
-  location: 'San Francisco, CA',
+  location: 'Rwanda',
   email: 'umuhirefabrice500@gmail.com',
   phone: '',
   availability: 'Available for freelance & full-time',
@@ -15,9 +15,10 @@ export const portfolio = {
     github: 'https://github.com/FABRICE600/smartbusinesslavableapp-69101efe',
     linkedin: '',
     twitter: '',
-    instagram: '',
+    facebook: 'https://www.facebook.com/fabrice.umuhire/',
+    instagram: 'https://www.instagram.com/fabu__fabu001/',
     youtube: '',
-    devto: 'https://dev.to/alexmorgan',
+    devto: '',
   },
 };
 
@@ -246,18 +247,45 @@ export const testimonials = [
     name: 'Sarah Chen',
     position: 'Product Manager',
     company: 'TechFlow Inc.',
-    quote: 'Alex is the rare engineer who cares as much about the user experience as the code quality. He elevated our entire frontend team.',
+    quote: 'Fabrice is the rare engineer who cares as much about the user experience as the code quality. He elevated our entire frontend team.',
   },
   {
     name: 'Marcus Johnson',
     position: 'CTO',
     company: 'StartupHub',
-    quote: 'One of the most reliable developers I\'ve worked with. Alex shipped features faster than anyone on the team without sacrificing quality.',
+    quote: 'One of the most reliable developers I\'ve worked with. Fabrice shipped features faster than anyone on the team without sacrificing quality.',
   },
   {
     name: 'Emily Rodriguez',
     position: 'UX Designer',
     company: 'CodeCraft Studio',
-    quote: 'Working with Alex was a designer\'s dream. He turned Figma files into pixel-perfect, accessible components every single time.',
+    quote: 'Working with Fabrice was a designer\'s dream. He turned Figma files into pixel-perfect, accessible components every single time.',
+  },
+];
+
+export const services = [
+  {
+    icon: 'code',
+    title: 'Web Development',
+    description: 'Custom websites and web applications built with modern technologies like React, TypeScript, and Node.js.',
+    features: ['Responsive design', 'SEO optimized', 'Performance focused', 'Clean, maintainable code'],
+  },
+  {
+    icon: 'layout',
+    title: 'UI/UX Design',
+    description: 'Beautiful, intuitive interfaces designed with user experience at the forefront of every decision.',
+    features: ['Design systems', 'Prototyping', 'User research', 'Accessibility first'],
+  },
+  {
+    icon: 'server',
+    title: 'Backend & APIs',
+    description: 'Robust backend systems and RESTful APIs that scale with your business needs.',
+    features: ['API design', 'Database architecture', 'Authentication', 'Cloud deployment'],
+  },
+  {
+    icon: 'smartphone',
+    title: 'Mobile-First Design',
+    description: 'Applications that look and work flawlessly across all devices, from phones to desktops.',
+    features: ['Cross-platform', 'Touch-optimized', 'Fast loading', 'Offline support'],
   },
 ];

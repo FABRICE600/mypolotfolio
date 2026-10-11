@@ -1,4 +1,4 @@
-import { ArrowUp, Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Twitter, Facebook, Instagram, Heart } from 'lucide-react';
 import { portfolio } from '@/data/portfolio';
 
 export default function Footer() {
@@ -6,6 +6,8 @@ export default function Footer() {
     { icon: Github, href: portfolio.social.github, label: 'GitHub' },
     { icon: Linkedin, href: portfolio.social.linkedin, label: 'LinkedIn' },
     { icon: Twitter, href: portfolio.social.twitter, label: 'Twitter' },
+    { icon: Facebook, href: portfolio.social.facebook, label: 'Facebook' },
+    { icon: Instagram, href: portfolio.social.instagram, label: 'Instagram' },
   ].filter((s) => s.href);
 
   return (

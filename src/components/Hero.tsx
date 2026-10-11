@@ -1,4 +1,4 @@
-import { ArrowDown, Download, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Twitter, Mail, Facebook, Instagram } from 'lucide-react';
 import { portfolio } from '@/data/portfolio';
 
 export default function Hero() {
@@ -6,6 +6,8 @@ export default function Hero() {
     { icon: Github, href: portfolio.social.github, label: 'GitHub' },
     { icon: Linkedin, href: portfolio.social.linkedin, label: 'LinkedIn' },
     { icon: Twitter, href: portfolio.social.twitter, label: 'Twitter' },
+    { icon: Facebook, href: portfolio.social.facebook, label: 'Facebook' },
+    { icon: Instagram, href: portfolio.social.instagram, label: 'Instagram' },
     { icon: Mail, href: `mailto:${portfolio.email}`, label: 'Email' },
   ].filter((s) => s.href);
 
@@ -13,9 +15,9 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" style={{ animation: 'blobFloat 8s ease-in-out infinite' }} />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" style={{ animation: 'blobFloat 10s ease-in-out infinite', animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-3xl" style={{ animation: 'blobFloat 12s ease-in-out infinite', animationDelay: '2s' }} />
       </div>
 
       {/* Grid overlay */}
@@ -65,7 +67,7 @@ export default function Hero() {
           )}
         </div>
 
-        <div className="flex items-center justify-center gap-3 animate-[fadeInUp_1.1s_ease-out]">
+        <div className="flex items-center justify-center gap-3 animate-[fadeInUp_1.1s_ease-out] flex-wrap">
           {socials.map((s) => (
             <a
               key={s.label}
